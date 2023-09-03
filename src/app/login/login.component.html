@@ -1,0 +1,20 @@
+<form>
+    <h2>Logohu ne sistem</h2>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginForm.email" type="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="loginForm.password" type="password">
+    </div>
+    <div class="mb-3">
+        <button (click)="submit()" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="mb-3">
+        <a class="link-opacity-100" [routerLink]="['/register']">Kliko ketu nese nuk ke nje account</a>
+
+    </div>
+</form>
+
