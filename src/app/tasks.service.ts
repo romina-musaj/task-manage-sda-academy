@@ -20,4 +20,8 @@ export class TasksService {
     }
    this.taskList.push(task);
   }
+
+  getCurrentUserTasks(){
+    return this.taskList.filter(task => task.userId === this.usersService.currentUser?.id)
+  }
 }
