@@ -7,7 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
-import { AddTaskComponent } from './add-task/add-task.component';
+import { AddEditTaskComponent } from './add-task/add-edit-task.component';
 import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { MenuComponent } from './menu/menu.component';
     RegisterComponent,
     LoginComponent,
     TasksListComponent,
-    AddTaskComponent,
+    AddEditTaskComponent,
     MenuComponent
   ],
   imports: [

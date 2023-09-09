@@ -17,6 +17,6 @@
         <textarea  name="description" [(ngModel)]="addTaskForm.description" class="form-control"></textarea>
     </div>
     <div class="mb-3">
-      <button [disabled]="addForm.invalid"  type="button" (click)="addTask()" class="btn btn-primary">Shto Task</button>
+      <button [disabled]="addForm.invalid"  type="button" (click)="save()" class="btn btn-primary">{{!!id ? 'Edito Task' : 'Shto Task' }}</button>
     </div>
 </form>

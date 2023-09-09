@@ -21,6 +21,12 @@ export class TasksService {
    this.taskList.push(task);
   }
 
+  editTask(id: number, data: Task): void {
+  const task = this.taskList.find(task => task.id == id) as Task;
+  task.title = data.title;
+  task.description = data.description;
+  }
+
   getCurrentUserTasks(){
     return this.taskList.filter(task => task.userId === this.usersService.currentUser?.id)
   }
