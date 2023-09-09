@@ -6,13 +6,16 @@ import { LoginComponent } from './login/login.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { MenuComponent } from './menu/menu.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: "/login", pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {
-    path: 'main', component: MenuComponent,
+    path: 'main', 
+    component: MenuComponent,
+    canActivate: [authGuard],
     children: [{ path: 'tasks-list', component: TasksListComponent },
     { path: 'add-task', component: AddTaskComponent },]
   }

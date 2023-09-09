@@ -5,6 +5,7 @@
         <th scope="col">Titulli</th>
         <th scope="col">Pershkrimi</th>
         <th scope="col">Statusi</th>
+        <th scope="col">Veprimi</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,12 @@
         <td>{{item.title}}</td>
         <td>{{item.description}}</td>
         <td>{{item.status ? 'DONE' : 'ON PROGRESS' }}</td>
+        <td>
+          <div class="form-check">
+            <input  [(ngModel)]="item.status" class="form-check-input" type="checkbox">
+            <label class="form-check-label"> A ke mbaruar me taskun ? </label>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

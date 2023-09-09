@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from './task';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-tasks-list',
@@ -7,19 +8,11 @@ import { Task } from './task';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent {
-  lista: Array<Task> = [
-    {
-      id: 1,
-      title: "Tasku i pare",
-      description: "Pershkrim i taskur te pare",
-      status: false,
-    },
-    {
-      id: 2,
-      title: "Tasku i dyte",
-      description: "Pershkrim i taskut te dyte",
-      status: true
-    }
-  ];
+  lista: Array<Task> = [];
+
+  constructor(private tasksService: TasksService){
+    this.lista = this.tasksService.taskList;
+
+  }
 
 }

@@ -19,6 +19,7 @@ export class LoginComponent {
   submit():void {
    const user = this.usersService.login(this.loginForm);
    if(user){
+    this.usersService.setCurrentUser(user);
     this.router.navigate(["/main/tasks-list"]);
    }
    else {

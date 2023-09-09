@@ -13,6 +13,10 @@
             <a class="nav-link" [routerLink]="['/main/add-task']" >Shto Task</a>
           </li>
         </ul>
+        <form class="d-flex">
+          <div class="username"> {{usersService.currentUser?.email}} </div>
+          <button (click)="logout()" class="btn btn-outline-success">Logout</button>
+        </form>
       </div>
     </div>
   </nav>

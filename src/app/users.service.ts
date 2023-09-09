@@ -8,6 +8,7 @@ import { Login } from './login/login';
 })
 export class UsersService {
   usersList: Array<User> = [];
+  currentUser!: User | undefined;
 
   constructor() { }
 
@@ -25,4 +26,9 @@ export class UsersService {
     };
     this.usersList.push(user);
   }
+
+  setCurrentUser(user: User | undefined){
+    this.currentUser = user;
+  }
+
 }
