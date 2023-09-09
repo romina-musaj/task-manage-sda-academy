@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RegisterData } from './register-data';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +11,13 @@ import { RegisterData } from './register-data';
 export class RegisterComponent {
   registerForm: RegisterData = {};
 
+  constructor(private usersService: UsersService,
+    private router: Router) { }
 
-  submit(): void{
-  console.log(this.registerForm);
+
+  submit(): void {
+    this.usersService.addUser(this.registerForm);
+    this.router.navigate(['/login']);
   }
 
 }
