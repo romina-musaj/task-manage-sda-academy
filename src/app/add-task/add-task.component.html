@@ -1,0 +1,18 @@
+<form>
+    <div class="mb-3">
+        <label class="form-label">
+            Titulli
+        </label>
+        <input required [ngModelOptions]="{standalone: true}" [(ngModel)]="addTaskForm.title" type="text" class="form-control" >
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Pershkrimi
+        </label>
+        <textarea required [ngModelOptions]="{standalone: true}" [(ngModel)]="addTaskForm.description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+      <button  type="button" (click)="addTask()" class="btn btn-primary">Shto Task</button>
+    </div>
+</form>
